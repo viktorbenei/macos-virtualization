@@ -4,6 +4,7 @@ MacOS virtualization - mainly links
 
 ## KVM / QEMU
 
+- My own KVM + QEMU experiment can be found (with links!) in the [own-kvm-qemu-experiment](https://github.com/viktorbenei/macos-virtualization/tree/master/own-kvm-qemu-experiment) directory
 - Running Mac OS X El Capitan and macOS Sierra on QEMU/KVM: https://github.com/kholia/OSX-KVM
     - Related discussion with even more links: https://news.ycombinator.com/item?id=12556609
 
