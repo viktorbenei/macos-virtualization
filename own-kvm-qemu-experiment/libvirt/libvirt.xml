@@ -1,0 +1,49 @@
+<domain type='kvm' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
+  <name>osxlibvirt</name>
+  <uuid>38cafecb-4774-4590-83eb-e576a79aab93</uuid>
+  <memory unit='KiB'>3145728</memory>
+  <currentMemory unit='KiB'>3145728</currentMemory>
+  <vcpu placement='static'>2</vcpu>
+  <os>
+    <type arch='x86_64' machine='q35'>hvm</type>
+    <kernel>/var/lib/libvirt/images/chameleon_svn2360_boot</kernel>
+  </os>
+  <features>
+    <acpi/>
+  </features>
+  <cpu mode='custom' match='exact'>
+    <model fallback='allow'>core2duo</model>
+  </cpu>
+  <clock offset='utc'/>
+  <on_poweroff>destroy</on_poweroff>
+  <on_reboot>restart</on_reboot>
+  <on_crash>destroy</on_crash>
+  <devices>
+    <emulator>/usr/bin/qemu-system-x86_64</emulator>
+    <controller type='sata' index='0'/>
+    <controller type='pci' index='0' model='pcie-root'/>
+    <controller type='pci' index='1' model='dmi-to-pci-bridge'/>
+    <controller type='pci' index='2' model='pci-bridge'/>
+    <input type='keyboard' bus='usb'/>
+    <input type='mouse' bus='usb'/>
+    <input type='mouse' bus='ps2'/>
+    <input type='keyboard' bus='ps2'/>
+    <graphics type='sdl'/>
+    <video>
+      <model type='vga' vram='9216' heads='1'/>
+    </video>
+    <memballoon model='none'/>
+  </devices>
+  <qemu:commandline>
+    <qemu:arg value='-device'/>
+    <qemu:arg value='isa-applesmc,osk=ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc'/>
+    <qemu:arg value='-device'/>
+    <qemu:arg value='ide-drive,bus=ide.2,drive=MacHDD'/>
+<!--     <qemu:arg value='-drive'/>
+    <qemu:arg value='id=MacHDD,if=none,cache=none,file=/var/lib/libvirt/images/mac_hdd.img'/> -->
+    <qemu:arg value='-netdev'/>
+    <qemu:arg value='user,id=hub0port0'/>
+    <qemu:arg value='-device'/>
+    <qemu:arg value='virtio-net,netdev=hub0port0,id=eth0'/>
+  </qemu:commandline>
+</domain>

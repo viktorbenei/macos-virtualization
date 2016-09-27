@@ -1,0 +1,6 @@
+vm_hdd_img_file_path="/home/viktor/vm-hdds/mac_hdd.img"
+osx_osk_key="ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc"
+chameleon_file_path="./chameleon_svn2360_boot"
+
+LC_ALL=C PATH=/bin HOME=/home/test USER=test \
+LOGNAME=test /usr/bin/qemu-system-x86_64 -enable-kvm -m 3072 -cpu core2duo -machine q35 -smp 2 -usbdevice keyboard -usbdevice mouse -vga std -device isa-applesmc,osk="${osx_osk_key}" -kernel "${chameleon_file_path}" -device ide-drive,bus=ide.2,drive=MacHDD -drive id=MacHDD,if=none,cache=none,file="${vm_hdd_img_file_path}"

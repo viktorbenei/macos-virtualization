@@ -1,0 +1,1 @@
+LC_ALL=C PATH=/bin HOME=/home/test USER=test LOGNAME=test /usr/bin/qemu-system-x86_64 -enable-kvm -m 3072 -cpu core2duo -machine q35 -smp 2 -usbdevice keyboard -usbdevice mouse -vga std -device isa-applesmc,osk=${osx_osk_key} -kernel "${chameleon_file_path}" -netdev user,id=hub0port0 -device virtio-net,netdev=hub0port0,id=eth0
