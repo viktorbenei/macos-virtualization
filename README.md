@@ -2,6 +2,12 @@
 
 MacOS virtualization - mainly links
 
+## Working VirtualBox / Packer scripts!! (2016.12)
+
+- https://github.com/timsutton/osx-vm-templates
+- related tutorial: https://spin.atomicobject.com/2015/11/17/vagrant-osx/
+
+
 ## KVM / QEMU
 
 - My own KVM + QEMU experiment can be found (with links!) in the [own-kvm-qemu-experiment](https://github.com/viktorbenei/macos-virtualization/tree/master/own-kvm-qemu-experiment) directory
