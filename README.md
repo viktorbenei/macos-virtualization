@@ -6,6 +6,7 @@ MacOS virtualization - mainly links
 
 - https://github.com/timsutton/osx-vm-templates
 - related tutorial: https://spin.atomicobject.com/2015/11/17/vagrant-osx/
+- and our related tool, based on these articles & repos: https://github.com/bitrise-tools/replica
 
 
 ## KVM / QEMU
